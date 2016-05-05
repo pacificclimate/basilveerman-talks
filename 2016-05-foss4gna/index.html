@@ -7,6 +7,7 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="../css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
@@ -38,7 +39,188 @@
         </section>
 
         <section>
+          <h2>Climate research and information</h2>
+          <img src="down_arrow_white.png" class="noborder nomargin">
+          <h3>Climate <span class="highlight">knowledge</span> and <span class="highlight">tools</span> for long term planning</h3>
         </section>
+
+        <section>
+          <h2>We aim to answer questions</h2>
+          <ul>
+            <li />What agricultural crops are viable in a particular area?
+            <li />Peak summer/winter energy demand?
+            <li />River floodplain levels and flood frequency?
+          </ul>
+
+          <p class="fragment">Physical and Human effects of climate change</p>
+
+          <aside class="notes">
+            Preparing reports for muni/orgs
+          </aside>
+        </section>
+
+        <section>
+          <h2>PCIC Data Portal</h2>
+          <h4>Data for researchers</h4>
+        </section>
+
+        <section>
+        <img src="pdp-0.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="pdp-1.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="pdp-2.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="pdp-3.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="pdp-4.png" class="stretch">
+        </section>
+
+        <section>
+          <h2>Plan2Adapt</h2>
+          <h4>High level information for planners/consultants</h4>
+        </section>
+
+        <section>
+        <img src="p2a-0.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="p2a-1.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="p2a-2.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="p2a-3.png" class="stretch">
+        </section>
+
+        <section>
+          <h2>Motivation...</h2>
+        </section>
+
+        <section>
+        <img src="rat-1.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="rat-2.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="rat-3.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="rat-4.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="rat-5.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="rat-6.png" class="stretch">
+        </section>
+
+        <section>
+          <h2>Success?</h2>
+          <table class="fragment">
+            <thead>
+              <td />LOC
+              <td />Rat
+              <td />CE
+            </thead>
+            <tr>
+              <td />Backend API
+              <td />9273
+              <td />1014 (w/ tests + doc = 1924)
+            </tr>
+            <tr>
+              <td />Backend Dataprep
+              <td />5841
+              <td />507
+            </tr>
+            <tr>
+              <td />Frontend
+              <td />9568
+              <td />3785
+            </tr>
+          </table>
+
+          <p class="fragment">C++/Perl -> Python/Javascript</p>
+        </section>
+
+        <section>
+        <img src="ce-1.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-2.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-3.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-4.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-5.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-6.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-7.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-8.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-9.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-10.png" class="stretch">
+        </section>
+
+        <section>
+        <img src="ce-11.png" class="stretch">
+        </section>
+
+        <section>
+          <h2>Docker</h2>
+          <div class="fragment">
+          <pre><code>docker run --rm -it -p 8910:8000 \
+-e "MDDB_DSN=sqlite:////db.sqlite" \
+-v $(pwd)/db.sqlite:/db.sqlite \
+-v 
+--name backend \
+pcic/climate-explorer-backend</code></pre>
+
+          <pre><code>curl http://localhost:8910/api/metadata?\
+model_id=wsdiETCCDI_yr_BCCAQ-ANUSPLIN300-CanESM2_historical-rcp85_r1i1p1_1950-2100\
+| python -m json.tool</code></pre>
+          </div>
+        </section>
+
 
       </div>
     </div>
@@ -50,6 +232,7 @@
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         history: true,
+        transition: 'none',
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [

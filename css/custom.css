@@ -1,0 +1,13 @@
+.reveal section img.noborder {
+  background:none; 
+  border:none; 
+  box-shadow:none;
+}
+
+.reveal section img.nomargin {
+  margin: 0;
+}
+
+.reveal section span.highlight {
+  color: dodgerblue;
+}
