@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
 	var port = grunt.option('port') || 8000;
 	var base = grunt.option('base') || '.';
+	var target = grunt.option('target') || '';
 
 	// Project configuration
 	grunt.initConfig({
@@ -95,7 +96,7 @@ module.exports = function(grunt) {
 					port: port,
 					base: base,
 					livereload: true,
-					open: true
+					open: 'http://localhost:' + port + '/' + target
 				}
 			}
 		},
