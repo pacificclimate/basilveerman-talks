@@ -8,6 +8,6 @@
   margin: 0;
 }
 
-.reveal section span.highlight {
+.reveal section .highlight {
   color: dodgerblue;
 }

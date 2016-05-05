@@ -33,7 +33,7 @@
           <h3>Embracing React, Webpack, ES6, Node.js</h3>
         </section>
 
-        <section>
+        <section data-background="bc_location_ge.png">
           <h2>Pacific Climate Impacts Consortium</h2>
           <p>Regional Climate Services Provider</p>
         </section>
@@ -141,6 +141,9 @@
             <li />Maintainability
             <li />Extensibility
           </ul>
+          <br />
+          <br />
+          <p class="fragment">Make everything better</p>
 
         </section>
 
@@ -224,7 +227,19 @@
         </section>
 
         <section>
-          <h2>Implementation</h2>
+          <h2>Backend Implementation</h2>
+
+          <img src="ce_arch.svg" class="stretch noborder">
+          <ul>
+            <li />NetCDF Base data
+            <li />Python/Flask/Numpy/GDAL
+            <li />Pluggable DB (PostgreSQL/SQLite)
+            <li />ncWMS
+          </ul>
+        </section>
+
+        <section>
+          <h2>Frontend Implementation</h2>
         </section>
 
         <section>
@@ -309,10 +324,10 @@ git diff 5..6</code></pre>
           <ul>
             <li />CSS Modules
             <li />Font/media loading
-            <li />HTML templating
-            <li />Deploy config (Uglify, Dedupe)
             <li />Dev tools (source map)
-            <li />Redux/Flux
+            <li class="highlight" />HTML templating
+            <li class="highlight" />Deploy config (Uglify, Dedupe)
+            <li class="highlight" />Redux/Flux
           </ul>
         </section>
 
@@ -332,6 +347,19 @@ model_id=wsdiETCCDI_yr_BCCAQ-ANUSPLIN300-CanESM2_historical-rcp85_r1i1p1_1950-21
           </div>
         </section>
 
+        <section>
+          <h2>Challenges</h2>
+          <ul>
+            <li class="fragment" />Backend scaling with massive data (GeoTrellis)
+            <li class="fragment" />Rapid Nodejs development
+            <li class="fragment" />DOM libraries in React
+            <li class="fragment" />Projections!
+          </ul>
+        </section>
+
+        <section>
+          <h1>Thanks</h1>
+        </section>
 
       </div>
     </div>
