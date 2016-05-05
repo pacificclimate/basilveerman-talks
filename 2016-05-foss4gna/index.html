@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="../css/reveal.css">
     <link rel="stylesheet" href="../css/custom.css">
-    <link rel="stylesheet" href="../css/theme/black.css">
+    <link rel="stylesheet" href="../css/theme/league.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../lib/css/zenburn.css">
@@ -106,7 +106,8 @@
         </section>
 
         <section>
-          <h2>Motivation...</h2>
+          <h2>Regional Analysis Tool</h2>
+          <h4>Detailed statistical information from climate models</h4>
         </section>
 
         <section>
@@ -134,10 +135,26 @@
         </section>
 
         <section>
+          <h2>Goals</h2>
+          <ul>
+            <li />User interface
+            <li />Maintainability
+            <li />Extensibility
+          </ul>
+
+        </section>
+
+        <section>
+          <img src="ce_arch.svg" class="stretch noborder">
+        </section>
+
+        <section>
           <h2>Success?</h2>
-          <table class="fragment">
+          <div class="fragment">
+          <h3>LOC</h3>
+          <table>
             <thead>
-              <td />LOC
+              <td />
               <td />Rat
               <td />CE
             </thead>
@@ -157,6 +174,7 @@
               <td />3785
             </tr>
           </table>
+          </div>
 
           <p class="fragment">C++/Perl -> Python/Javascript</p>
         </section>
@@ -206,12 +224,103 @@
         </section>
 
         <section>
+          <h2>Implementation</h2>
+        </section>
+
+        <section>
+          <h2>React</h2>
+          <ul>
+            <li />Web components(-ish)
+            <li />Stateful/Stateless components
+            <li />Data driven updates
+          </ul>
+        </section>
+
+        <section>
+          <h2>Webpack</h2>
+          <img src="http://webpack.github.io/assets/what-is-webpack.png" class="stretch noborder">
+        </section>
+
+        <section>
+          <h2>Demo</h2>
+        </section>
+
+        <section>
+          <pre><code class="bash">
+mkdir foss4gna2016-demo && cd foss4gna2016-demo
+git init
+npm init
+npm i -D babel-loader babel-preset-es2015 babel-preset-react \
+         copyfiles react react-dom webpack
+          </code></pre>
+          <pre><code class="bash">git checkout 1</code></pre>
+        </section>
+
+        <section>
+          <p>Not really that useful...</p>
+          <p>Need to `npm run build`, then open `index.html`</p>
+        </section>
+
+        <section>
+          <h2>Webpack-dev-server & Hot reloading</h2>
+          <pre><code>npm i -D react-hot-loader webpack-dev-server</code></pre>
+
+          <pre><code>git checkout 2
+git diff 1..2</code></pre>
+        </section>
+
+        <section>
+          <h2>Bootstrap</h2>
+          <pre><code>npm i -D react-bootstrap bootstrap</code></pre>
+
+          <pre><code>git checkout 3
+git diff 2..3
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Leaflet</h2>
+          <pre><code>npm i -D leaflet</code></pre>
+
+          <pre><code>git checkout 4
+git diff 3..4</code></pre>
+        </section>
+
+        <section>
+          <h2>Leaflet-draw</h2>
+          <pre><code>npm i -D leaflet-draw</code></pre>
+
+          <pre><code>git checkout 5
+git diff 4..5</code></pre>
+        </section>
+
+        <section>
+          <h2>Geospatial libraries</h2>
+          <pre><code>npm i -D filesaver.js shp-write togeojson togpx tokml wellknown</code></pre>
+
+          <pre><code>git checkout 6
+git diff 5..6</code></pre>
+        </section>
+
+        <section>
+          <h2>What's next?</h2>
+          <ul>
+            <li />CSS Modules
+            <li />Font/media loading
+            <li />HTML templating
+            <li />Deploy config (Uglify, Dedupe)
+            <li />Dev tools (source map)
+            <li />Redux/Flux
+          </ul>
+        </section>
+
+        <section>
           <h2>Docker</h2>
           <div class="fragment">
           <pre><code>docker run --rm -it -p 8910:8000 \
 -e "MDDB_DSN=sqlite:////db.sqlite" \
--v $(pwd)/db.sqlite:/db.sqlite \
--v 
+-v $HOME/code/climate-explorer-backend/db.sqlite:/db.sqlite \
+-v $HOME/data:/data/nc \
 --name backend \
 pcic/climate-explorer-backend</code></pre>
 
