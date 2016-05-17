@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Climate Explorer</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Climate Explorer</h1>
+          <h3>April 2016 Update</h3>
+        </section>
+
+        <section>
+          <h3>Progress?</h3>
+
+          <ul>
+            <li class="fragment" />2 full development cycles
+            <li class="fragment" />19 merged features/bugfixes
+            <li class="fragment" />Frontend: 181 commits, 75 files changed, 2520 insertions(+), 1574 deletions(-)
+            <li class="fragment" />Backend: 107 commits,  27 files changed, 1390 insertions(+), 456 deletions(-)
+          </ul>
+        </section>
+
+        <section>
+          <h3>Backend Features</h3>
+
+          <ul>
+            <li class="fragment" />Polygon clipping performance increase of <strong>6000x</strong>
+            <li class="fragment" /><strong>Massive</strong> metadata request performance increase
+            <li class="fragment" />Implement more intelligent caching methods
+            <li class="fragment" />Increase available metadata to front end
+            <li class="fragment" />Code quality rated at <strong>97%</strong>
+          </ul>
+
+          <aside class="notes">
+          Metadata request performance 200-300ms per dataset, so with ~400 dataset
+          </aside>
+        </section>
+
+        <section>
+          <h3>Frontend Features</h3>
+
+          <ul>
+            <li class="fragment" />Annual data availability
+            <li class="fragment" />Data table exporter
+            <li class="fragment" />Polygon import/export for analysis region
+            <li class="fragment" />Cleaner map view
+            <li class="fragment" />Map colorbar with symbology autoscale
+            <li class="fragment" />Map image export (in development)
+            <li class="fragment" />Implement automatic linting and fixed 2000+ code 'smells'
+          </ul>
+        </section>
+
+        <section>
+          <h3><a href="http://localhost:8080/" target="ce">Demo</a></h3>
+
+          <aside class="notes">
+          last demo at 5503309bdf6ab13e4383e7fc3a715900f874dd29
+          git checkout master
+          CE_BACKEND_URL=http://docker1.pcic.uvic.ca:20003/api CE_ENSEMBLE_NAME=ce_moti_2 npm start
+
+
+          Removed model selector for PCIC12
+          New ClimDEX data, annual resolution
+          reduced data table
+          map controls
+          polygon import/export
+          print feature
+          </aside>
+        </section>
+
+        <section>
+          <h3><a href="http://localhost:8080/climo" target="ce">Demo 2</a></h3>
+
+          <aside class="notes">
+          git checkout 8910984c45e0e069ef967b053bbcc79d9746eacd
+          CE_BACKEND_URL=http://docker1.pcic.uvic.ca:20003/api CE_ENSEMBLE_NAME=ce_pcic_2 npm start
+
+          select high-res data
+          annual data with climo data
+          </aside>
+        </section>
+
+        <section>
+          <h3>Develop smarter, not harder</h3>
+
+          <table>
+          <thead>
+            <td />
+            <td />Rat
+            <td />CE
+          </thead>
+          <tr>
+            <td />Backend API LOC
+            <td />9273
+            <td />1014 (w/ tests + doc = 1924)
+          </tr>
+          <tr>
+            <td />Backend Dataprep LOC
+            <td />5841
+            <td />507
+          </tr>
+          <tr>
+            <td />Frontend LOC
+            <td />9568
+            <td />3785
+          </tr>
+
+          </table>
+
+          <aside class="notes">
+          technical debt (800 lines rat re-write)
+          hit by a bus, onboarding time
+          </aside>
+        </section>
+
+        <section>
+          <h3>Next Steps</h3>
+
+          <ul>
+            <li class="fragment" />Increase number of datasets
+            <li class="fragment" />Exporter dialog
+            <li class="fragment" />Refactor data model
+            <li class="fragment" />Human readable text fields
+            <li class="fragment" />Stakeholder consultation
+            <li class="fragment" />Production feature cutoff
+          </ul>
+
+          <aside class="notes">
+          datasets - models/variables/scenarios
+          exporter - zip it up
+          data model - selector issues w/sparse datasets
+          </aside>
+        </section>
+
+        <section>
+          <h3>One more thing...</h3>
+        </section>
+
+        <section>
+          <img src="kitten.jpg" class="stretch">
+        </section>
+
+        <section>
+        </section>
+ 
+      </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../plugin/markdown/marked.js' },
+          { src: '../plugin/markdown/markdown.js' },
+          { src: '../plugin/notes/notes.js', async: true },
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
