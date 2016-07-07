@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Git Tutorial</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="../plugin/fullscreen-img/fullscreen-img.css">
+		<!--[if lt IE 9]>
+		<script src="../lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+				</section>
+
+				<section>
+					<h1>Version Control</h1>
+					<h3>Making code management suck less</h3>
+					<p>
+						By Basil Veerman
+					</p>
+				</section>
+
+				<section>
+					<h2>What is Version Control?</h2>
+					<p>
+						<blockquote class="fragment">
+						  the task of keeping a software system consisting of many versions and configurations well organized
+						</blockquote>
+					</p>
+				</section>
+
+				<section>
+					<h2>Why use it?</h2>
+				</section>
+
+				<section fullscreen-img="img/phd101212s.gif" fullscreen-size="contain">
+				</section>
+
+				<section>
+					<h2>Basic Version Control</h2>
+					<img src="img/dropbox-prev-versions.png">
+				</section>
+
+				<section data-transition="none">
+					<h2>Basic Version Control</h2>
+					<img src="img/dropbox-restore-snapshot.png">
+				</section>
+
+				<section>
+					<h2>Git</h2>
+				</section>
+
+				<section>
+					<h2>Git Structure</h2>
+					<img src="img/version-control-edit-commit.png">
+				</section>
+
+				<section>
+					<h2>Version Control Structure</h2>
+					<img src="img/deltas.png">
+				</section>
+
+				<section>
+					<h2>Git Structure</h2>
+					<img src="img/snapshots.png">
+				</section>
+
+				<section>
+					<h2>Lets get to it</h2>
+					<img src="img/coder_cat.jpg">
+				</section>
+
+				<section>
+					<h2>Basic Commands</h2>
+					<ul>
+					  <li />git config
+					  <li />git init
+					  <li />git clone
+					  <li />git diff
+					  <li />git add
+					  <li />git commit
+					</ul>
+				</section>
+
+				<section>
+					<h2>Git Config</h2>
+
+					<pre><code data-trim data-noescape>
+git config --global user.name "User Name"
+git config --global user.email email@address.ca
+git config --global core.editor fav_editor
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Git Areas</h2>
+					<img src="img/areas.png">
+				</section>
+				
+				<section>
+					<h2>Backup/Sharing code</h2>
+				</section>
+
+				<section>
+					<h2>Github</h2>
+					<ul>
+					  <li />git clone
+					  <li />git pull
+					  <li />git push
+					</ul>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				margin: 0.1,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/fullscreen-img/fullscreen-img.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
